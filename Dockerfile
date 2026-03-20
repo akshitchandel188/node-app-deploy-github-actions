@@ -1,7 +1,12 @@
-FROM node:22-alpine 
+FROM node:22-alpine
+
 WORKDIR /app
+
 COPY package*.json ./
-run npm install
-copy . .
+RUN npm install
+
+COPY . .
+
 EXPOSE 8080
-CMD [ "node","index.js" ]
+
+CMD ["node", "index.js"]
